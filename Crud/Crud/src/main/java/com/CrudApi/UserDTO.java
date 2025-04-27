@@ -1,11 +1,6 @@
 package DTO;
 
 
-import java.time.LocalDate;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class UsuarioRequestDTO {
     private String nome;
     private String email;
@@ -16,6 +11,25 @@ public class UsuarioRequestDTO {
     private String cidade;
     private String estado;
     private Boolean ativo;
+
+
+    public UsuarioRequestDTO(Boolean ativo, String estado, String endereco
+                             String telefone, String email, String senha,
+                             LocalDate dataNascimento, String cidade, String nome) {
+        this.ativo = ativo;
+        this.estado = estado;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.email = email;
+        this.senha = senha;
+        this.dataNascimento = dataNascimento;
+        this.cidade = cidade;
+        this.nome = nome;
+    }
+
+
+    public UsuarioRequestDTO() {
+    }
 
     public Boolean getAtivo() {
         return ativo;
