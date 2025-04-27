@@ -1,5 +1,11 @@
-package DTO;
+package java.userrequestDTO.java
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import java.time.LocalDate;
 
 public class UsuarioRequestDTO {
     private String nome;

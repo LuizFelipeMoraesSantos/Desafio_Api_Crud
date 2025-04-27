@@ -33,7 +33,7 @@ public class UserModel {
         this.name = name;
         this.email = email;
         this.senha = senha;
-        Data = data;
+        this.Data = data;
         this.telefone = telefone;
         this.endereco = endereco;
         this.cidade = cidade;
