@@ -1,6 +1,8 @@
+package com.CrudApi.Crud;
+
 import java.time.LocalDate;
 
-public class UsuarioResponseDTO {
+public class UserResponseDTO  {
 
     private Long id;
     private String nome;
@@ -12,10 +14,10 @@ public class UsuarioResponseDTO {
     private String estado;
     private Boolean ativo;
 
-    public UsuarioResponseDTO() {
+    public UserResponseDTO() {
     }
 
-    public UsuarioResponseDTO(Long id, String nome, String email, LocalDate dataNascimento,
+    public UserResponseDTO(Long id, String nome, String email, LocalDate dataNascimento,
                               String telefone, String endereco, String cidade, String estado, Boolean ativo) {
         this.id = id;
         this.nome = nome;

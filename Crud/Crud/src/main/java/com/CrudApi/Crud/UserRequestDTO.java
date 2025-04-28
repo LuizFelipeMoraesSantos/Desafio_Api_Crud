@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 
 
-public class UsuarioRequestDTO {
+public class UserRequestDTO {
     private String nome;
     private String email;
     private String senha;
@@ -17,12 +17,12 @@ public class UsuarioRequestDTO {
     private Boolean ativo;
 
 
-    public UsuarioRequestDTO() {
+    public void UsuarioRequestDTO() {
     }
 
-    public  UsuarioRequestDTO(String nome, String email, String senha, LocalDate dataNascimento,
-                                        String telefone, String endereco, String cidade,
-                                        String estado, Boolean ativo) {
+    public void UsuarioRequestDTO(String nome, String email, String senha, LocalDate dataNascimento,
+                                  String telefone, String endereco, String cidade,
+                                  String estado, Boolean ativo) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
