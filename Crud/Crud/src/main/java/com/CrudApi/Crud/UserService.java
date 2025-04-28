@@ -3,6 +3,7 @@ package com.CrudApi.Crud;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import UserResponseDTO.java
 
 import java.util.List;
 import java.util.stream.Collectors;

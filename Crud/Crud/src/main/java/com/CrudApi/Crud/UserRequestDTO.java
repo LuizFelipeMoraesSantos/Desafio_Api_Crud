@@ -17,10 +17,10 @@ public class UserRequestDTO {
     private Boolean ativo;
 
 
-    public void UsuarioRequestDTO() {
+    public void UserRequestDTO() {
     }
 
-    public void UsuarioRequestDTO(String nome, String email, String senha, LocalDate dataNascimento,
+    public void UserRequestDTO(String nome, String email, String senha, LocalDate dataNascimento,
                                   String telefone, String endereco, String cidade,
                                   String estado, Boolean ativo) {
         this.nome = nome;
