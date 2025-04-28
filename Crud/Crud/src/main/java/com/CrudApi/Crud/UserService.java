@@ -1,10 +1,6 @@
 package com.CrudApi.Crud;
 
-import com.example.usuarioapi.dto.UsuarioRequestDTO;
-import com.example.usuarioapi.dto.UsuarioResponseDTO;
-import com.example.usuarioapi.entity.Usuario;
-import com.example.usuarioapi.repository.UsuarioRepository;
-import com.example.usuarioapi.exception.UsuarioNotFoundException;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
