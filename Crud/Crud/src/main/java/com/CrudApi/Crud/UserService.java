@@ -1,11 +1,15 @@
 package com.CrudApi.Crud;
 
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserService {
-
+    public void createUser(UserRequestDTO userRequestDTO) {
+        UserModel user = new UserModel();
+    }
+    public void deleteUser(Long id) {
+    }
+    public void updateUser(UserRequestDTO userRequestDTO) {
+    }
 
 }
