@@ -15,6 +15,17 @@ public class UserController {
     public ResponseEntity<String> createUser(UserRequestDTO userRequestDTO) {
         return ResponseEntity.ok().build();
     }
+    public ResponseEntity<String> deleteUser(Long id) {
+        return ResponseEntity.ok().build();
+    }
+
+    public ResponseEntity<String> updateUser(UserRequestDTO userRequestDTO) {
+        return ResponseEntity.ok().build();
+    }
+
+    public ResponseEntity<UserResponseDTO> getUser(Long id) {
+        return ResponseEntity.ok().build();
+    }
 
 
 
