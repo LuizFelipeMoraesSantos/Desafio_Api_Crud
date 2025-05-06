@@ -28,6 +28,7 @@ public class UserResponseDTO  {
         this.cidade = cidade;
         this.estado = estado;
         this.ativo = ativo;
+
     }
 
 
