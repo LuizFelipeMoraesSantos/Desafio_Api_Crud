@@ -1,37 +1,44 @@
 package com.CrudApi.Crud;
 
+
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/users")
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/users")
 public class UserController {
 
-    private UserService userService;
+    private final UserService service;
 
-
-    @PostMapping("/users")
-    public ResponseEntity<?> createUser(@RequestBody UserRequestDTO userRequestDTO) {
-        userService.createUser(userRequestDTO);
-        return ResponseEntity.ok().build();
+    public UserController(UserService service) {
+        this.service = service;
     }
 
-    @DeleteMapping("/users/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
+    @PostMapping
+    public ResponseEntity<UserResponseDTO> cadastrar(@RequestBody UserRequestDTO dto) {
+        return ResponseEntity.status(201).body(service.cadastrar(dto));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<UserResponseDTO>> listarTodos() {
+        return ResponseEntity.ok(service.listarTodos());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserResponseDTO> buscarPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(service.buscarPorId(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UserResponseDTO> atualizar(@PathVariable Long id, @RequestBody UserRequestDTO dto) {
+        return ResponseEntity.ok(service.atualizar(id, dto));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        service.deletar(id);
         return ResponseEntity.noContent().build();
     }
-
-
-   public ResponseEntity<?> updateUser(@RequestBody UserRequestDTO userRequestDTO) {
-        userService.updateUser(userRequestDTO);
-        return ResponseEntity.ok().build();
-    }
-
-    public ResponseEntity<UserResponseDTO> getUser(Long id) {
-        return ResponseEntity.ok().build();
-    }
-
-
 }
