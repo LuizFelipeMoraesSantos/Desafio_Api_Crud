@@ -13,7 +13,7 @@ public interface UserRepository extends JpaRepository<UserModel, Long> {
     UserModel findByTelefone(String telefone);
     UserModel findBySenha(String senha);
 
-    List<UserModel> findByNome(String nome);
+    List<UserModel> findByName(String name);
     List<UserModel> findByCidade(String cidade);
     List<UserModel> findByEstado(String estado);
     List<UserModel> findByEndereco(String endereco);

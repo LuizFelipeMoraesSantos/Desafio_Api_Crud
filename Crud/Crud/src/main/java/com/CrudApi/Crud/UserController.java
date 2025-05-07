@@ -15,12 +15,14 @@ public class UserController {
         this.service = service;
     }
 
-    @PostMapping("/registers")
+    @PostMapping()
     public ResponseEntity<UserResponseDTO> cadastrar(@RequestBody UserRequestDTO dto) {
-        return ResponseEntity.status(201).body(service.cadastrar(dto));
+        UserResponseDTO userResponse = service.cadastrar(dto);
+
+        return ResponseEntity.status(201).body(userResponse);
     }
 
-    @GetMapping("/list")
+    @GetMapping()
     public ResponseEntity<List<UserResponseDTO>> listarTodos() {
         return ResponseEntity.ok(service.listarTodos());
     }

@@ -1,39 +1,32 @@
 package com.CrudApi.Crud;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
+import jakarta.persistence.*;
 import java.time.LocalDate;
-
 
 @Entity
 @Table(name = "tb_user")
 public class UserModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // n tinha, precisa ter a strategy pra gerar essa regra no db
     private Long id;
     private String name;
     private String email;
     private String senha;
-    private LocalDate Data;
+    private LocalDate data;
     private String telefone;
     private String endereco;
     private String cidade;
     private String estado;
     private Boolean ativo;
 
-    //Construtores
-
-
-    public UserModel(Long id, String name, String email, String senha,
+    public UserModel(String name, String email, String senha,
                      LocalDate data, String telefone, String endereco,
                      String cidade, String estado, Boolean ativo) {
-        this.id = id;
         this.name = name;
         this.email = email;
         this.senha = senha;
-        this.Data = data;
+        this.data = data;  // Corrigido para 'data'
         this.telefone = telefone;
         this.endereco = endereco;
         this.cidade = cidade;
@@ -41,8 +34,9 @@ public class UserModel {
         this.ativo = ativo;
     }
 
-    public UserModel() {
-    }
+    public UserModel() {}
+
+    // Getters e Setters
 
     public Long getId() {
         return id;
@@ -77,11 +71,11 @@ public class UserModel {
     }
 
     public LocalDate getData() {
-        return Data;
+        return data;  // Corrigido para 'data'
     }
 
     public void setData(LocalDate data) {
-        Data = data;
+        this.data = data;  // Corrigido para 'data'
     }
 
     public String getTelefone() {

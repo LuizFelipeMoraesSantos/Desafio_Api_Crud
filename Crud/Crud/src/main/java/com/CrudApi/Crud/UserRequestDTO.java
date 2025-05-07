@@ -1,12 +1,11 @@
 package com.CrudApi.Crud;
 
-
 import java.time.LocalDate;
 
-
-
 public class UserRequestDTO {
-    private String nome;
+
+    private Long id;
+    private String name;
     private String email;
     private String senha;
     private LocalDate dataNascimento;
@@ -16,14 +15,10 @@ public class UserRequestDTO {
     private String estado;
     private Boolean ativo;
 
-
-    public void UserRequestDTO() {
-    }
-
-    public void UserRequestDTO(String nome, String email, String senha, LocalDate dataNascimento,
-                                  String telefone, String endereco, String cidade,
-                                  String estado, Boolean ativo) {
-        this.nome = nome;
+    public UserRequestDTO(String nome, String email, String senha, LocalDate dataNascimento,
+                          String telefone, String endereco, String cidade,
+                          String estado, Boolean ativo) {
+        this.name = nome;
         this.email = email;
         this.senha = senha;
         this.dataNascimento = dataNascimento;
@@ -34,6 +29,8 @@ public class UserRequestDTO {
         this.ativo = ativo;
     }
 
+    // Getters e Setters
+
     public Boolean getAtivo() {
         return ativo;
     }
@@ -42,12 +39,12 @@ public class UserRequestDTO {
         this.ativo = ativo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEstado() {
@@ -105,7 +102,4 @@ public class UserRequestDTO {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
-
 }
