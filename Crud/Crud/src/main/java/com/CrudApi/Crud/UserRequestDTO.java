@@ -1,7 +1,7 @@
 package com.CrudApi.Crud;
 
 import java.time.LocalDate;
-
+// usem record quando for fazer DTO
 public class UserRequestDTO {
 
     private Long id;

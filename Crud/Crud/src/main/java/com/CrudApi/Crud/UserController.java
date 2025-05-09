@@ -2,24 +2,31 @@ package com.CrudApi.Crud;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+//A url Precisa ser referente ao que ta sendo trabalhando, e no plural
+@RequestMapping("/users")
 public class UserController {
-
+// Não se coloca /caminho para Post ou Get de um endpoint, o proprio RequestMapping principal ja deve servir, apenas troca o verbo http
     private final UserService service;
 
     public UserController(UserService service) {
         this.service = service;
     }
 
-    @PostMapping()
-    public ResponseEntity<UserResponseDTO> cadastrar(@RequestBody UserRequestDTO dto) {
+    public ResponseEntity<Void> cadastrar(@RequestBody UserRequestDTO dto) {
         UserResponseDTO userResponse = service.cadastrar(dto);
+        // Supondo que o ID do usuário tenha sido gerado no cadastro
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(userResponse.getId())
+                .toUri();
+        return ResponseEntity.created(location).build(); // N pode retornar Body, apenas o location e e o codigo http
 
-        return ResponseEntity.status(201).body(userResponse);
     }
 
     @GetMapping()

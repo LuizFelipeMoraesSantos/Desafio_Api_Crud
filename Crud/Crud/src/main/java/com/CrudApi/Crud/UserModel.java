@@ -2,7 +2,7 @@ package com.CrudApi.Crud;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
-
+// Crie sem o nome "model" na entidade
 @Entity
 @Table(name = "tb_user")
 public class UserModel {
